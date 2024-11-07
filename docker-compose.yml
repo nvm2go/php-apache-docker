@@ -12,7 +12,7 @@ services:
       PMA_USER: myuser
       PMA_PORT: "3306"
     ports:
-      - "81:80"
+      - "80:80"
     volumes:
       - /DATA/AppData/app:/var/www/html/
     depends_on:
@@ -33,7 +33,6 @@ services:
       REMOTE_SQL:
       TZ: ASIA/MAKASSAR
     volumes:
-      - /DATA/AppData/mysql/config:/config
       - /DATA/AppData/mysql:/var/lib/mysql
   adminer:
     image: adminer:4.8.1
@@ -42,6 +41,6 @@ services:
     environment:
       PMA_PORT: "3306"
     ports:
-      - "8181:8080"
+      - "8080:8080"
     depends_on:
       - db
